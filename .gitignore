@@ -4,8 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-src/FireBase/firebase.utils.js
 
+.env
 
 # testing
 /coverage
