@@ -56,9 +56,7 @@ const SignIn = () => {
           required
         />
         <CustomButton type={handleSubmit}> Sign in </CustomButton>
-        <CustomButton onClick={""} isGoogleSignIn>
-          Sign in with Google
-        </CustomButton>
+        
       </form>
     </div>
   );

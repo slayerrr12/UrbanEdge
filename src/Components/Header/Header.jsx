@@ -1,26 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { auth } from "../../FireBase/firebase.utils";
 
+import "./Header.scss";
 
-
-
-import './Header.scss';
-
-const Header = () => (
-  <div className='header'>
-    <Link className='logo-container' to='/'>
-      <img src='crown.svg'/>
+const Header = (props) => (
+  <div className="header">
+    <Link className="logo-container" to="/">
+      <img src="crown.svg" />
     </Link>
-    <div className='options'>
-      <Link className='option' to='/shop'>
+    <div className="options">
+      <Link className="option" to="/shop">
         SHOP
       </Link>
-      <Link className='option' to='/shop'>
+      <Link className="option" to="/shop">
         CONTACT
       </Link>
-      <Link className='option' to='/login'>
-        LOGIN
-      </Link>
+      {props.currentUser ? (
+        <div className="option" onClick={() => auth.signOut()}>
+          SIGN OUT
+        </div>
+      ) : (
+        <Link className="option" to="/login">
+          SIGNIN
+        </Link>
+      )}
     </div>
   </div>
 );
