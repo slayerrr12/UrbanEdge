@@ -1,1 +1,2 @@
-Ecommerce website project
+this project is currently put on hold :/
+
